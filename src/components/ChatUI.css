@@ -1,0 +1,45 @@
+.main-container{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+}
+.msgs-container{
+    flex-grow: 1;
+
+}
+.msg-container{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+.input-container{
+
+}
+.sendButton{
+
+}
+.received-message{
+    font-family: "Roboto";
+    color:white;
+    background-color: #9E9E9E;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1.24em;
+    max-width: 40%;
+}
+.own-message{
+    font-family: "Roboto";
+    color: white;
+    background-color: rgb(0,188,212);
+    margin-left: auto;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1.24em;
+    max-width: 40%;
+}
