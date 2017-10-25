@@ -12,6 +12,13 @@ class Sidebar extends Component {
         this.state = {
             value: ''
         };
+
+        this.chatClick = this.chatClick.bind(this);
+        console.log(this);
+    }
+
+    chatClick(e) {
+        this.props.sideClick(e.target.dataset.id);
     }
 
     render() {
@@ -20,19 +27,19 @@ class Sidebar extends Component {
                 <div className="sidebar-header">
                     Riku Wikman
                 </div>
-                <div className="message-preview">
-                    <div className="message-preview-header">
+                <div className="message-preview" data-id={50} onClick={this.chatClick}>
+                    <div className="message-preview-header" data-id={50}>
                         Leevi Ojala
                     </div>
-                    <div className="message-preview-text">
+                    <div className="message-preview-text" data-id={50}>
                         Äijä on kyllä ihan paras, ihan paras, ihan paras!
                     </div>
                 </div>
-                <div className="message-preview">
-                    <div className="message-preview-header">
+                <div className="message-preview" data-id={40} onClick={this.chatClick}>
+                    <div className="message-preview-header" data-id={40}>
                         Santeri Remes
                     </div>
-                    <div className="message-preview-text">
+                    <div className="message-preview-text" data-id={40}>
                         Se on GG.
                     </div>
                 </div>
