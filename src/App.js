@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Sidebar from './components/Sidebar';
 import ChatUI from './components/ChatUI';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -16,6 +17,7 @@ class App extends Component {
 
     return (
       <MuiThemeProvider>
+        <Sidebar />
         <ChatUI />
       </MuiThemeProvider>
     );
