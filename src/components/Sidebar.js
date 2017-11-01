@@ -21,25 +21,42 @@ class Sidebar extends Component {
         this.props.sideClick(e.target.dataset.id);
     }
 
+    myColor(position) {
+        if (this.state.active === position) {
+            return "rgba(0, 188, 212,0.8)";
+        }
+        return "";
+    }
+
+    toggle(position) {
+        if (this.state.active === position) {
+            this.setState({ active: null })
+        } else {
+            this.setState({ active: position })
+        }
+    }
+
+
+
     render() {
         return (
             <div className="haloo-sidebar">
                 <div className="sidebar-header">
                     Riku Wikman
                 </div>
-                <div className="message-preview" data-id={50} onClick={this.chatClick}>
-                    <div className="message-preview-header" data-id={50}>
+                <div className="message-preview" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(0) }} data-id={50} onClick={this.chatClick}>
+                    <div className="message-preview-header" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(0) }} data-id={50}>
                         Leevi Ojala
                     </div>
-                    <div className="message-preview-text" data-id={50}>
+                    <div className="message-preview-text" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(0) }} data-id={50}>
                         Äijä on kyllä ihan paras, ihan paras, ihan paras!
                     </div>
                 </div>
-                <div className="message-preview" data-id={40} onClick={this.chatClick}>
-                    <div className="message-preview-header" data-id={40}>
+                <div className="message-preview" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(1) }} data-id={40} onClick={this.chatClick}>
+                    <div className="message-preview-header" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(1) }} data-id={40}>
                         Santeri Remes
                     </div>
-                    <div className="message-preview-text" data-id={40}>
+                    <div className="message-preview-text" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(1) }} data-id={40}>
                         Se on GG.
                     </div>
                 </div>

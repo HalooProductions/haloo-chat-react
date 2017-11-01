@@ -53,9 +53,17 @@ class ChatUI extends Component {
 
     handleSubmit(event) {
         let msgs = this.state.messages;
-
-        this.setState({ message: msgs });
+        this.setState({ messages: msgs });
         this.setState({ value: "" });
+        var newArray = this.state.messages.slice();    
+        newArray.push(
+            {
+                "sender": 4,
+                "receiver": 1,
+                "message": this.state.value,
+                "timestamp": 1507713052607
+            });   
+        this.setState({messages: newArray})
 
         event.preventDefault();
     }
