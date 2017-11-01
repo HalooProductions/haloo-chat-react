@@ -23,7 +23,7 @@ class Sidebar extends Component {
 
     myColor(position) {
         if (this.state.active === position) {
-            return "rgba(0, 188, 212,0.8)";
+            return "#1ae4ff";
         }
         return "";
     }
