@@ -10,15 +10,23 @@ class App extends Component {
 
 
   constructor(props) {
-    super(props);
+	super(props);
+	this.state = {
+		openChatId: null
+	};
   }  
+  
+
+  chatClick(id) {
+	this.setState({openChatId: id});
+  }
 
   render() {
 
     return (
       <MuiThemeProvider>
-        <Sidebar />
-        <ChatUI />
+        <Sidebar sideClick={this.chatClick.bind(this)}/>
+        <ChatUI senderId={this.state.openChatId} />
       </MuiThemeProvider>
     );
   }
