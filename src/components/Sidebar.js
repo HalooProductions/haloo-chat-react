@@ -18,7 +18,7 @@ class Sidebar extends Component {
     }
 
     chatClick(e) {
-        this.props.sideClick(e.target.dataset.id);
+        
     }
 
     myColor(position) {
@@ -28,15 +28,12 @@ class Sidebar extends Component {
         return "";
     }
 
-    toggle(position) {
-        if (this.state.active === position) {
-            this.setState({ active: null })
-        } else {
-            this.setState({ active: position })
+    toggle(id, pos) {
+        if (this.state.active !== pos) {
+            this.setState({ active: pos });
+            this.props.sideClick(id);
         }
     }
-
-
 
     render() {
         return (
@@ -44,19 +41,19 @@ class Sidebar extends Component {
                 <div className="sidebar-header">
                     Riku Wikman
                 </div>
-                <div className="message-preview" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(0) }} data-id={50} onClick={this.chatClick}>
-                    <div className="message-preview-header" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(0) }} data-id={50}>
+                <div className="message-preview" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(50, 0) }}>
+                    <div className="message-preview-header" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(50, 0) }}>
                         Leevi Ojala
                     </div>
-                    <div className="message-preview-text" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(0) }} data-id={50}>
+                    <div className="message-preview-text" style={{ background: this.myColor(0) }} onClick={() => { this.toggle(50, 0) }}>
                         Äijä on kyllä ihan paras, ihan paras, ihan paras!
                     </div>
                 </div>
-                <div className="message-preview" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(1) }} data-id={40} onClick={this.chatClick}>
-                    <div className="message-preview-header" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(1) }} data-id={40}>
+                <div className="message-preview" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(40, 1) }}>
+                    <div className="message-preview-header" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(40, 1) }}>
                         Santeri Remes
                     </div>
-                    <div className="message-preview-text" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(1) }} data-id={40}>
+                    <div className="message-preview-text" style={{ background: this.myColor(1) }} onClick={() => { this.toggle(40, 1) }}>
                         Se on GG.
                     </div>
                 </div>

@@ -20,6 +20,7 @@
 .message-preview {
     padding: 10px 15px;
     font-family: "Roboto";
+    cursor: pointer;
 }
 
 .message-preview-header {
@@ -27,6 +28,7 @@
     letter-spacing: 0.5px;
     font-size: 18px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .message-preview-text {
@@ -37,4 +39,5 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    cursor: pointer;
 }
