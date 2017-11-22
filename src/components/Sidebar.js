@@ -6,6 +6,7 @@ import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import PersonOutline from 'material-ui/svg-icons/social/person-outline';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 class Sidebar extends Component {
     constructor(props) {
@@ -53,11 +54,16 @@ class Sidebar extends Component {
                 if (conversations !== null) {
                     data.push.apply(data, conversations)
                 }
+
                 this.setState({ roomsConversations: data });
             })
             .catch(function (error) {
                 console.log(error);
             });
+    }
+
+    dispatchChatChange(id) {
+        
     }
 
     render() {
