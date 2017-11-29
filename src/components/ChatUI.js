@@ -12,13 +12,15 @@ class ChatUI extends Component {
 
     constructor(props) {
     
-        super(props);        
+        super(props);    
 
         this.state = {
+            ides: this.props.getIdValue,
             messages: [
            ],
             value: ''
         };
+        
 
         //AJAX haku kantaan, jolla haetaan vanhat viestit
         //websocket Kutsutaan vasta kun ajax haku valmis
@@ -82,6 +84,10 @@ class ChatUI extends Component {
     }
 
     render() {
+        setTimeout(() => {
+            console.log(this.props.getIdValue);
+        }, 1500);
+        
         const messageSender = (message) => {
             if (message.sender === 1) {
                 return <div className="received-message">{message.message}</div>

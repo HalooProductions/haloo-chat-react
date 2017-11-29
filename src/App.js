@@ -11,21 +11,36 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openChatId: null
+      openChatId: null,
+      idValue: null
     };
+    
   }
 
 
   chatClick(id) {
     this.setState({ openChatId: id });
   }
+  myCallback = (childData) => {
+    setTimeout(()=> {
+      this.setState({idValue: childData});
+      console.log(childData);
+      console.log(this.state.idValue);
+    }, 500);
+    
+  }
 
   render() {
 
     return (
       <MuiThemeProvider>
-        <Sidebar sideClick={this.chatClick.bind(this)} />
-        <ChatUI senderId={this.state.openChatId} />
+        <Sidebar 
+          callbackFromParent={this.myCallback}
+          sideClick={this.chatClick.bind(this)} />
+
+        <ChatUI 
+          senderId={this.state.openChatId}
+          getIdValue={this.state.idValue} />
       </MuiThemeProvider>
     );
   }

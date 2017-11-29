@@ -6,7 +6,6 @@ import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import PersonOutline from 'material-ui/svg-icons/social/person-outline';
 import axios from 'axios';
-import { connect } from 'react-redux';
 
 class Sidebar extends Component {
     constructor(props) {
@@ -19,6 +18,11 @@ class Sidebar extends Component {
         this.chatClick = this.chatClick.bind(this);
         this.getChats();
         console.log(this);
+        this.passToParent();
+    }
+    
+    passToParent(){
+        this.props.callbackFromParent("lellelel");
     }
 
     chatClick(e) {
@@ -49,6 +53,8 @@ class Sidebar extends Component {
                 let conversations = response.data.conversations;
                 if (rooms !== null) {
                     data.push.apply(data, rooms);
+                    window.rooms = rooms.id;
+                    this.props.callbackFromParent(rooms.id);
                 }
 
                 if (conversations !== null) {
