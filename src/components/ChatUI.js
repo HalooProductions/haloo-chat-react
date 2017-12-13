@@ -59,8 +59,8 @@ class ChatUI extends Component {
     // }
 
     handleChange(event) {
-       // this.setState({ value: event.target.value });
-       // console.log(this.state);
+       this.setState({ value: event.target.value });
+       console.log(this.state);
     }
 
     handleSubmit(event) {
@@ -87,8 +87,8 @@ class ChatUI extends Component {
     }
 
     scrollToBottom = () => {
-        const node = ReactDOM.findDOMNode(this.messagesEnd);
-        node.scrollIntoView({ behavior: "smooth" });
+        //const node = ReactDOM.findDOMNode(this.messagesEnd);
+        //node.scrollIntoView({ behavior: "smooth" });
     }
 
     componentDidMount() {
