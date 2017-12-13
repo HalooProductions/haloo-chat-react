@@ -65,7 +65,7 @@ class ChatUI extends Component {
         var newArray = this.state.conversations.slice();    
         newArray.push(
             {
-                "sender": 304865346313289729,
+                "sender": 305021048621072385,
                 "receiver": 1,
                 "message": this.state.value,
                 "timestamp": Date.now()
@@ -74,7 +74,7 @@ class ChatUI extends Component {
 
         this.setState({ conversations: newArray });
         let obj = {
-            sender: "304865346313289729",
+            sender: "305021048621072385",
             receiver: this.state.senderId,
             message: this.state.value,
             timestamp: Date.now()
@@ -117,7 +117,7 @@ class ChatUI extends Component {
         if (room === 'true') {
             url = '/chatlog?room_id=' + senderId;
         } else {
-            url = '/chatlog?user_id=304865346313289729&receiver_id=' + senderId;
+            url = '/chatlog?user_id=305021048621072385&receiver_id=' + senderId;
         }
         console.log(url);
         this.setState({
@@ -136,7 +136,7 @@ class ChatUI extends Component {
             });
     }
     messageSender(message) {
-        if (message.sender === '304865346313289729') {
+        if (message.sender === '305021048621072385') {
             return <div className="own-message">{message.message}</div>    
         } else {
             return <div className="received-message">{message.message}</div>

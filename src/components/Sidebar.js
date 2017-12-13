@@ -46,7 +46,7 @@ class Sidebar extends Component {
     }
 
     getChats() {
-        axios.get('/conversations?user_id=304865346313289729')
+        axios.get('/conversations?user_id=305021048621072385')
             .then((response) => {
                 console.log(response.data);
                 let data = [];
