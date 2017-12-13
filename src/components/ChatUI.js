@@ -59,8 +59,8 @@ class ChatUI extends Component {
     // }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
-        console.log(this.state);
+       // this.setState({ value: event.target.value });
+       // console.log(this.state);
     }
 
     handleSubmit(event) {
