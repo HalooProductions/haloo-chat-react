@@ -38,9 +38,11 @@ class ChatUI extends Component {
             console.log(message);
             let jsonData = JSON.parse(message.data);
             console.log(jsonData);
-            var newArray = this.state.conversations.slice();    
-            newArray.push(jsonData);
-    
+            var newArray = this.state.conversations.slice();
+            if (jsonData.sender !== '305021048621072385') {
+                newArray.push(jsonData);
+            }
+
             this.setState({ conversations: newArray });
         }
     }
