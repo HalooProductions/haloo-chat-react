@@ -67,7 +67,7 @@ class ChatUI extends Component {
         var newArray = this.state.conversations.slice();    
         newArray.push(
             {
-                "sender": 305021048621072385,
+                "sender": '305021048621072385',
                 "receiver": 1,
                 "message": this.state.value,
                 "timestamp": Date.now()
