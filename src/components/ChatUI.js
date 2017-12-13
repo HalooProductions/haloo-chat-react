@@ -149,19 +149,20 @@ class ChatUI extends Component {
 
         return (
             <div className="main-container">
-                {this.state.conversations.map((conversation, i) => {
-                    return ([
-                        <div className="msgs-container">
-                            <div className="msg-container">
-                                    {this.messageSender(conversation)}
+                <div className="msgs-container">
+                    {this.state.conversations.map((conversation, i) => {
+                        return ([
+                            <div>
+                                <div className="msg-container">
+                                        {this.messageSender(conversation)}
+                                    </div>
+                                <div style={{ float: "left", clear: "both" }}
+                                    ref={(el) => { this.messagesEnd = el; }}>
                                 </div>
-                            <div style={{ float: "left", clear: "both" }}
-                                ref={(el) => { this.messagesEnd = el; }}>
-                            </div>
-
-                        </div >
-                    ]);
-                })}
+                            </div >
+                        ]);
+                    })}
+                </div>
 
                 <div className="input-container">
                         <TextField hintText="Say something" fullWidth={true} multiLine={true} floatingLabelText="Type your message here" type="text" value={this.state.value} onChange={this.handleChange} />

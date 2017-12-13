@@ -11,7 +11,7 @@
     padding-top: 20px;
     padding-right: 20px;
     flex-grow: 1;
-    /*overflow-y: scroll; */
+    overflow-y: scroll; 
     height: 50px;
 }
 .msg-container{
