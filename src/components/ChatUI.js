@@ -87,8 +87,8 @@ class ChatUI extends Component {
     }
 
     scrollToBottom = () => {
-        // const node = ReactDOM.findDOMNode(this.messagesEnd);
-        // node.scrollIntoView({ behavior: "smooth" });
+        const node = ReactDOM.findDOMNode(this.messagesEnd);
+        node.scrollIntoView({ behavior: "smooth" });
     }
 
     componentDidMount() {
